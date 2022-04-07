@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import QuestionCard from "./components/QuestionCard";
 import { fetchQuizQuestions } from "./API";
 import { QuestionState, Difficulty } from "./API";
+// import { GlobalStyle, Wrapper } from "./App.styles";
 
-type AnswerObject = {
+export type AnswerObject = {
   question: string;
   answer: string;
   correct: boolean;
@@ -74,7 +75,7 @@ function App() {
           Start
         </button>
       ) : null}
-      {!gameOver ? <p className="score">Score:</p> : null}
+      {!gameOver ? <p className="score">Score:{score}</p> : null}
       {loading && <p>Loading Questions ....</p>}
       {!loading && !gameOver && (
         <QuestionCard
